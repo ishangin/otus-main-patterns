@@ -5,16 +5,13 @@ from space_invaders.engine.commands.log_writer import LogWriter, log
 
 
 class TestLogWriter:
-    def test_success(self):
-        log.exception = Mock()
-        exc = ValueError('Some exception')
+    def test_success(self, caplog):
+        error_message = 'Some exception'
+        exc = ValueError(error_message)
 
-        try:
-            raise exc
-        except ValueError:
-            LogWriter(exc).execute()
+        LogWriter(exc).execute()
 
-        log.exception.assert_called_once_with(exc)
+        assert [error_message] == [rec.message for rec in caplog.records]
 
     def test_fail(self):
         log.exception = Mock()

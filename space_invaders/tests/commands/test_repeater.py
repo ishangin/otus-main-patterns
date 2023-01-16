@@ -13,9 +13,8 @@ class TestRepeater:
 
         mock_cmd.execute.assert_called_once_with()
 
-    def test_fail(self):
-        mock_cmd = Mock(Command)
-        mock_cmd.side_effect = AttributeError
+    def test_success_with_raise_exception(self):
+        mock_cmd = Mock(Command, side_effect=AttributeError)
 
         with pytest.raises(AttributeError):
             Repeater(mock_cmd()).execute()
