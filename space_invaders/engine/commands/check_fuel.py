@@ -1,6 +1,5 @@
 from space_invaders.engine.errors.exceptions import CommandException
-from space_invaders.engine.interfaces import Command
-from space_invaders.engine.interfaces.check_fuel import Fuelable
+from space_invaders.engine.interfaces import Command, Fuelable
 
 
 class CheckFuel(Command):
