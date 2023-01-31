@@ -1,20 +1,25 @@
 from abc import ABC, abstractmethod
 
 
-class FuelBurner(ABC):
+class Fuelable(ABC):
     """Объект, обладающий свойством изменения уровня топлива."""
 
     @property
     @abstractmethod
-    def fuel_level(self) -> int:
+    def fuel(self) -> int:
         """Уровень топлива."""
 
-    @fuel_level.setter
+    @fuel.setter
     @abstractmethod
-    def fuel_level(self, value: int) -> None:
+    def fuel(self, value: int) -> None:
         """Уровень топлива."""
 
     @property
     @abstractmethod
-    def fuel_consumption(self) -> int:
+    def fuel_rate(self) -> int:
+        """Расход топлива."""
+
+    @fuel_rate.setter
+    @abstractmethod
+    def fuel_rate(self, value: int) -> int:
         """Расход топлива."""
