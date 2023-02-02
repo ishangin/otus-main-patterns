@@ -136,6 +136,10 @@ pyflakes==2.5.0
 pygments==2.14.0
     # via ipython
 pytest==7.2.0
+    # via
+    #   otus-patterns-python-hw (pyproject.toml)
+    #   pytest-mock
+pytest-mock==3.10.0
     # via otus-patterns-python-hw (pyproject.toml)
 six==1.16.0
     # via asttokens

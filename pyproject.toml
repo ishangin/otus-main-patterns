@@ -10,6 +10,7 @@ dependencies = [
 dev = [
     "ipython",
     "pytest",
+    "pytest-mock",
     "black",
     "flake8-absolute-import",
     "flake8-bugbear",

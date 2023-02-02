@@ -12,3 +12,7 @@ class NegativeLinearVelocityError(Exception):
 
 class CommandException(Exception):
     """Исключение при нехватке топлива"""
+
+
+class IocResolveException(Exception):
+    ...
